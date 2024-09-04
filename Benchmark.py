@@ -86,7 +86,7 @@ def evaluate_sorting_algorithms():
 
 
 # Main execution
-if _name_ == "_main_":
+if __name__ == "__main__":
     # Display system details
     system_details = fetch_system_details()
     print("System Details:")
