@@ -1,11 +1,17 @@
 def insertion_sort(elements):
+    # Loop from the second element to the last element
     for index in range(1, len(elements)):
-        current_value = elements[index]
-        position = index - 1
-        while position >= 0 and current_value < elements[position]:
+        key = elements[index]  # The element to be positioned
+        position = index - 1   # Position of the previous element
+        
+        # Shift elements of the sorted portion of the array to the right
+        while position >= 0 and key < elements[position]:
             elements[position + 1] = elements[position]
             position -= 1
-        elements[position + 1] = current_value
+        
+        # Insert the key at the correct position
+        elements[position + 1] = key
+    
     return elements
 
 # Test Case 1: Random list of integers
