@@ -1,11 +1,17 @@
 def bubble_sort(sequence):
     length = len(sequence)
+    # Loop through each element in the sequence
     for pass_num in range(length):
+        swapped = False  # Flag to track if any swaps occur during this pass
         # Elements after pass_num are already sorted
-        for index in range(0, length - pass_num - 1):
+        for index in range(length - pass_num - 1):
             # Swap if the element found is greater than the next element
             if sequence[index] > sequence[index + 1]:
                 sequence[index], sequence[index + 1] = sequence[index + 1], sequence[index]
+                swapped = True
+        # If no elements were swapped, the list is sorted
+        if not swapped:
+            break
     return sequence
 
 # Test Case 1: Unordered list of integers
