@@ -1,13 +1,14 @@
 def selection_sort(data):
     length = len(data)
+    # Traverse through all array elements
     for current_index in range(length):
-        # Assume the minimum is the current index
+        # Set the first unsorted element as the minimum
         min_index = current_index
-        # Compare against the elements after the current index to find the smallest
+        # Traverse the remaining unsorted elements to find the actual minimum
         for compare_index in range(current_index + 1, length):
             if data[compare_index] < data[min_index]:
                 min_index = compare_index
-        # Swap the found minimum element with the element at the current index
+        # Swap the found minimum element with the first unsorted element
         data[current_index], data[min_index] = data[min_index], data[current_index]
     return data
 
